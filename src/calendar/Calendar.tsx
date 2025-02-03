@@ -37,7 +37,7 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
             <Cell onClick={nextYear}>{">>"}</Cell>
 
             {daysOfWeek.map((day) => (
-                <Cell key={day} className="test-sm font-bold uppercase">{day}</Cell>
+                <Cell key={day} className="text-3xl font-bold uppercase">{day}</Cell>
             ))}
             
             {Array.from({length: prefixDays}).map((_, index) => {
@@ -66,11 +66,11 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
                 )
             })}
         </div>
-        <div className="flex justify-between">
+        {/* <div className="flex justify-between">
             <div className="text-green-700">Green</div>
             <div className="text-green-300">Difference</div>
             <div className="text-red-700">Red</div>    
-        </div>
+        </div> */}
          </div>
     );
 }

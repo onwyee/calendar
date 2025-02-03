@@ -1,4 +1,4 @@
-import { format } from "date-fns"
+import { format, getDay } from "date-fns"
 import { useState } from "react";
 import Calendar from "./calendar/Calendar";
 import Modal from "./calendar/Modal";
@@ -9,13 +9,14 @@ const App = () => {
   const [listOpen, setListOpen] = useState<boolean>(false);
   const [addOpen, setAddOpen ] = useState<boolean>(false);
   
-  
+  const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const handleDateChange = (date: Date) => {
     setCurrentDate(date); // change current date
     setListOpen(true); //open list when a date is selected
   }
   return <div className="mt-4 flex flex-col items-center">
-    {/* list modal */}
+     <h1 className="text-5xl m-20">Selected Date: {weekDays[currentDate.getDay()]}, {format(currentDate, "dd LLLL, yyyy")}</h1>
+    {/* list modal
     <Modal open={listOpen} onClose={()=>setListOpen(false)}>
       <div className="flex flex-col gap-4">
         <h1 className="text-xl m-2">Selected Date: {format(currentDate, "dd LLLL yyyy")}</h1>
@@ -56,12 +57,12 @@ const App = () => {
       </div>
     </Modal>
     {/*Add modal */}
-    <Modal open={addOpen} onClose={()=>setAddOpen(false)}>
+    {/* <Modal open={addOpen} onClose={()=>setAddOpen(false)}>
       <div className="flex flex-col gap-4">
         <h1 className="text-xl m-2">Selected Date: {format(currentDate, "dd LLLL yyyy")}</h1>
         <p>tetssghd</p>
       </div>
-    </Modal>
+    </Modal>  */}
     <Calendar value={currentDate} onChange={handleDateChange}/>
   </div>;
 }

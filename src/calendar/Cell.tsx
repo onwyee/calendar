@@ -12,7 +12,7 @@ interface Props extends React.PropsWithChildren {
 const Cell: React.FC<Props> = ({ isActive=false, onClick, className, children }) => {
     return <div 
     onClick={isActive ? undefined : onClick} 
-    className={clsx("h-20 flex items-center justify-center border-l border-t border-b border-r",
+    className={clsx("text-3xl h-20 flex items-center justify-center border-l border-t border-b border-r",
         {
             "bg-blue-600 text-white":isActive
         }, 
