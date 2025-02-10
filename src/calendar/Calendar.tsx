@@ -32,7 +32,7 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
         <div className="grid grid-cols-7 items-center justify-center text-center">
             <Cell onClick={prevYear}>{"<<"}</Cell>
             <Cell onClick={prevMonth}>{"<"}</Cell>
-            <Cell className="col-span-3 text-lg">{format(value, 'LLLL yyyy')}</Cell>
+            <Cell className="col-span-3 text-3xl">{format(value, 'LLLL yyyy')}</Cell>
             <Cell onClick={nextMonth}>{">"}</Cell>
             <Cell onClick={nextYear}>{">>"}</Cell>
 
@@ -69,7 +69,7 @@ const Calendar: React.FC<Props> = ({value = new Date(), onChange}) => {
         {/* <div className="flex justify-between">
             <div className="text-green-700">Green</div>
             <div className="text-green-300">Difference</div>
-            <div className="text-red-700">Red</div>    
+            <div className="text-red-700">Red 
         </div> */}
          </div>
     );

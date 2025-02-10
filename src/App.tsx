@@ -1,18 +1,16 @@
-import { format, getDay } from "date-fns"
+import { format } from "date-fns"
 import { useState } from "react";
 import Calendar from "./calendar/Calendar";
-import Modal from "./calendar/Modal";
-import BudgetItem from "./calendar/BudgetItem";
 
 const App = () => {
   const [currentDate,setCurrentDate] = useState(new Date());
-  const [listOpen, setListOpen] = useState<boolean>(false);
-  const [addOpen, setAddOpen ] = useState<boolean>(false);
+  //const [listOpen, setListOpen] = useState<boolean>(false);
+  //const [addOpen, setAddOpen ] = useState<boolean>(false);
   
   const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const handleDateChange = (date: Date) => {
     setCurrentDate(date); // change current date
-    setListOpen(true); //open list when a date is selected
+    //setListOpen(true); //open list when a date is selected
   }
   return <div className="mt-4 flex flex-col items-center">
      <h1 className="text-5xl m-20">Selected Date: {weekDays[currentDate.getDay()]}, {format(currentDate, "dd LLLL, yyyy")}</h1>
